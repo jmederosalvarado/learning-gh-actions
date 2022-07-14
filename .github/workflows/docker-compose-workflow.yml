@@ -8,7 +8,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-        path: actions
+        with:
+          path: actions
       - name: Test `docker-compose` command
         run: cd actions && docker-compose run hello
       - name: Test `docker compose` command
