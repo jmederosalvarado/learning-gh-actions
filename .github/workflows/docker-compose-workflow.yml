@@ -14,3 +14,5 @@ jobs:
         run: cd actions && docker-compose run hello
       - name: Test `docker compose` command
         run: cd actions && docker compose run hello
+      - name: Test exp
+        run: echo "${{ success() }}"
