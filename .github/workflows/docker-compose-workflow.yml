@@ -1,0 +1,15 @@
+name: main
+
+on: [push, workflow_dispatch]
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        path: actions
+      - name: Test `docker-compose` command
+        run: cd actions && docker-compose run hello
+      - name: Test `docker compose` command
+        run: cd actions && docker compose run hello
